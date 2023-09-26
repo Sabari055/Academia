@@ -60,7 +60,7 @@ function Auth() {
         localStorage.setItem("id",response.data.userId);
 
         if (listvar === 'ROLE_USER' ) {
-          navigate('/course');
+          navigate('/home');
         } else if(listvar === 'ROLE_ADMIN') {
           // navigate('/InstructorDashboard');
           alert('admin')
