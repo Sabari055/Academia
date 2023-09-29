@@ -28,12 +28,36 @@ function UserHome() {
       });
   }, []);
 
+  const [quiz, setQuiz] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:8080/getallQuiz',{
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+      .then((response) => {
+        setQuiz(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("Problem While Fetching", error);
+      });
+  }, []);
+
   function ExploreToLesson(id) {
       navigate(`/lesson/${id}`)
       window.scrollTo(0, 0);
   }
+  function ExploreToEvents(id) {
+    navigate(`/events/${id}`)
+    window.scrollTo(0, 0);
+}
   function Explore(){
     navigate('/course')
+  }
+  function ExploreEvents(){
+    navigate('/events-home')
   }
 
   return (
@@ -72,12 +96,34 @@ function UserHome() {
           </div>
         ))}
       </Carousel>
-      <div className='course-car' onClick={Explore}>View all Courses</div>
+      <div className='course-car' onClick={Explore}><p>View all Courses</p></div>
+      </div>
+      
+      <div className='event-homeCarousel'>
+      <div className='car-title'>Events</div>
+      <Carousel className='carousel'
+          slideGap="xs"
+          loop
+          align="start"
+        >
+         
+        {quiz.map((qz) => (
+          <div className='home-event-main'>
+          <div className='home-event-card' key={qz.id}  onClick={()=>ExploreToEvents(qz.id)}>
+            <div className='home-event-card-title'>
+            {qz.questions.length > 0 ? qz.questions[0].category : 'Category Not Found'}
+            </div>
+            <div className='home-event-card-category'>
+            {qz.title}
+            </div>
+          </div>
+          </div>
+        ))}
+      
+      </Carousel>
+      <div className='course-car' onClick={ExploreEvents}><p>View all Events</p></div>
       </div>
 
-      <div className='home-cat'>
-        <div className='home-category'>Java</div>
-      </div>
     </div>
   );
 }

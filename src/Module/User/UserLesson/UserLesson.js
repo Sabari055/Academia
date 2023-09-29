@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../../Components/Header/Header';
 import './UserLesson.css';
-import { FaIceCream, FaLongArrowAltRight } from 'react-icons/fa';
+import {  MdKeyboardArrowRight } from 'react-icons/md';
 import { BsFillStickiesFill } from "react-icons/bs";
+import { AiOutlinePlus } from "react-icons/ai";
 import KeyFea1 from './KeyFea1.webp';
 import KeyFea2 from './KeyFea2.webp';
 import KeyFea3 from './KeyFea3.webp';
@@ -84,10 +85,9 @@ function UserLesson() {
         <div className='lessonBanner' key={course.id}>
           <div className='lessonPath'>
             <li className='list'>Home</li>
-            <FaLongArrowAltRight />
+            <MdKeyboardArrowRight />
             <li className='list'>Courses</li>
-            <FaLongArrowAltRight />
-            
+            <MdKeyboardArrowRight />
             <li className='currentScreen'>{course.category}</li>
           </div>
           {lessons.map((lesson) => (
@@ -165,7 +165,7 @@ function UserLesson() {
             <Group className='moduleGroup'>
               <div className='module' onClick={toggle}>
                 <div className='moduleTitle'>Course Module
-                  <FaIceCream />
+                  <AiOutlinePlus />
                 </div>
                 <Collapse in={opened}>
                   <Text className='moduleContent'>

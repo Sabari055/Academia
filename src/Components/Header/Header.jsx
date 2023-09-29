@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './Header.css'; // Assuming you have defined the CSS for your header
-import { FaAmazon, FaBars, FaTimes } from "react-icons/fa"; // Import the icons you need
+import './Header.css';
+import { FaAmazon, FaBars, FaSignOutAlt, FaTimes } from "react-icons/fa";
+import { MdAccountCircle, MdHelpOutline, MdToc, MdClear } from "react-icons/md";
 import { Menu } from '@mantine/core';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+
+  const navigate=useNavigate();
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [userDetails, setUserDetails] = useState([]);
   const token = localStorage.getItem('token');
@@ -31,6 +36,10 @@ function Header() {
       })
   }, []);
 
+  function Profile(){
+    navigate('/profile')
+  }
+
   return (
     <div className='header'>
       <div className='navbar'>
@@ -42,12 +51,12 @@ function Header() {
             <li><a href='/home'>Home</a></li>
             <li><a href='/course'>Courses</a></li>
             <li><a href='/enrolled'>MyCourses</a></li>
-            <li><a href='/'>Events</a></li>
+            <li><a href='/events-Home'>Events</a></li>
           </ul>
         ) : null}
         {token != null ? ( 
           <div className='action_btn'>
-            <Menu width={300}>
+            <Menu width={300}> 
               <Menu.Target>
                 <div className='profile-btn' >
                   {userDetails?.name?.charAt(0)?.toUpperCase()}
@@ -56,7 +65,7 @@ function Header() {
 
               <Menu.Dropdown>
                 {/* <Menu.Label>Application</Menu.Label> */}
-                <Menu.Item icon={
+                <Menu.Item className='profile-menuTop'icon={
                   <div className='drop-action_btn'>
                     <div className='drop-profile-btn'>
                       {userDetails?.name?.charAt(0)}
@@ -69,27 +78,25 @@ function Header() {
                 </Menu.Item>
 
                 <Menu.Divider />
-
-                {/* <Menu.Label>Danger zone</Menu.Label> */}
-                <Menu.Item icon={<FaAmazon size={14} />}>Notification</Menu.Item>
-                <Menu.Item icon={<FaAmazon size={14} />}>Message</Menu.Item>
-                <Menu.Item icon={<FaAmazon size={14} />}>Account Settings</Menu.Item>
+                
+                <Menu.Item className='profile-menuProfile' onClick={Profile}  icon={<MdAccountCircle size={16} />}>MyProfile</Menu.Item>
                 <Menu.Divider />
-                <Menu.Item icon={<FaAmazon size={14} />}>Help</Menu.Item>
-                <Menu.Item color="red" icon={<FaAmazon size={14} />}>Log out</Menu.Item>
+                <Menu.Item className='profile-menu' icon={<MdHelpOutline size={16} />}>Help</Menu.Item>
+                <Menu.Item className='profile-menu' color="red" icon={<FaSignOutAlt size={16} />}>Log out</Menu.Item>
               </Menu.Dropdown>
             </Menu>
           </div>
         ) : null}
         <div className='toggle_btn' onClick={toggleDropdown}>
-          {isDropdownOpen ? <FaTimes /> : <FaBars />}
+          {isDropdownOpen ? <MdClear /> : <MdToc />}
         </div>
       </div>
       <div className={`dropdown_menu ${isDropdownOpen ? 'open' : ''}`}>
         <ul>
-          <li><a href='/'>Courses</a></li>
-          <li><a href='/'>MyCourses</a></li>
-          <li><a href='/'>Events</a></li>
+        <li><a href='/home'>Home</a></li>
+          <li><a href='/course'>Courses</a></li>
+          <li><a href='/enrolled'>MyCourses</a></li>
+          <li><a href='/events'>Events</a></li>
         </ul>
         {/* <a href='#' className='action_btn'>Get Started</a> */}
       </div>
