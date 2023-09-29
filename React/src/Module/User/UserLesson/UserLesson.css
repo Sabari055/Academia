@@ -11,7 +11,6 @@
 
 } */
 .lesson-screen-container {
-  /* Force screens to start from the top-left corner */
   margin: 0;
   padding: 0;
   position: absolute;
@@ -19,7 +18,6 @@
   left: 0;
 }
 
-/* Add this CSS to your UserLesson.css file */
 body{
   background-color: #ffffff;
 }
@@ -89,7 +87,7 @@ body{
   
 
 .lessonBanner {
-    background: url("F:\Leraning_Portal\academia\react\src\Module\User\UserLesson\banner.webp") no-repeat;
+    background: url("F:\OnlineLearningPortal\Academia\React\src\Module\User\UserLesson\banner.webp") no-repeat;
     background-size: cover;
     padding-top: 4rem;
     padding-bottom: 2rem;
