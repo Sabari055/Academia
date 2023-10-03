@@ -58,7 +58,8 @@ function UserLesson() {
       });
   }, []);
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     const enrollment = {
       EnrolledAt: new Date().toISOString(),
     };
@@ -126,11 +127,11 @@ function UserLesson() {
           <h2>Enroll Now</h2>
           <form>
             <label>Name:</label>
-            <input type='text' placeholder='Your Name' />
+            <input type='text' placeholder='Your Name' required/>
             <label>Email:</label>
-            <input type='email' placeholder='Your Email' />
+            <input type='email' placeholder='Your Email' required />
             <label>Phone Number:</label>
-            <input type='num' placeholder='Your Phone Number' />
+            <input type='num' placeholder='Your Phone Number' required/>
             <button type='button' onClick={handleSubmit}>Submit</button>
           </form>
         </div>

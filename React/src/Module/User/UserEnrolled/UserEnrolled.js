@@ -8,7 +8,7 @@ export default function UserEnrolled() {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        // Assuming you have a variable `userId` containing the user's ID
+
         const userId = localStorage.getItem('id');
 
         axios.get(`http://localhost:8080/enrollment/getEnrolled/${userId}`, {

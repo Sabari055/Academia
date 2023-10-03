@@ -57,7 +57,6 @@ function Course() {
                 </div>
                 <div className='price'>{course.price}</div>
                 <div className='courseButton'>
-                  {/* Pass the course's id to the goToLesson function */}
                   <button className='courseBtn' onClick={() => goToLesson(course.id)}>Explore</button>
                 </div>
               </div>  

@@ -73,10 +73,10 @@ section .courseHead {
 .courseTitle {
   font-size: 24px;
   margin-bottom: 10px;
-  max-height: 60px; /* Set the maximum height for the title */
-  overflow: hidden; /* Hide overflowing text */
-  text-overflow: ellipsis; /* Show ellipsis (...) for overflow text */
-  white-space: nowrap; /* Prevent text from wrapping */
+  max-height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .courseCard h3{
     font-size: 24px;
@@ -84,7 +84,7 @@ section .courseHead {
     margin: 10px 20px 10px 20px;
 }
 .courseButton {
-  margin-top: auto; /* Push the button to the bottom of the card */
+  margin-top: auto;
 }
 .courseCard p{
   /* display: flex;

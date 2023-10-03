@@ -168,7 +168,7 @@ body{
     padding: 1rem;
     border-radius: 8px;
     margin: 2rem 0;
-    max-width: 100%; /* Adjust the max-width as needed */
+    max-width: 100%; 
     width: fit-content;
   }
   
@@ -267,9 +267,6 @@ body{
     align-items: center;
     gap: 15px;
 }
-/* .kc1 img{
-  height: 45px;
-} */
 
 .lessonTopic{
   padding: 50px 0 35px 100px ;
@@ -458,15 +455,15 @@ body{
       }
 
       .lessonFeatures {
-        padding: 15px 0 20px 50px; /* Adjust padding for smaller screens */
+        padding: 15px 0 20px 50px;
     }
 
     .keyCard1 {
-        flex-direction: column; /* Stack keyCard1 items vertically on smaller screens */
+        flex-direction: column;
     }
 
     .kc1 {
-        width: 100%; /* Make kc1 take full width on smaller screens */
+        width: 100%;
     }
 }
   
@@ -515,13 +512,13 @@ body{
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 50px 0 0 0 ; /* Adjust padding for smaller screens */
+    padding: 50px 0 0 0 ;
   }
   .keyCard1 {
-      flex-direction: column; /* Stack keyCard1 items vertically on smaller screens */
+      flex-direction: column;
   }
   .kc1 {
-    width: 100%; /* Make kc1 take full width on smaller screens */
+    width: 100%;
 }
 
   .lessonTopic{

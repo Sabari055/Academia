@@ -31,7 +31,7 @@ function UserHome() {
   const [quiz, setQuiz] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/getallQuiz',{
+    axios.get('http://localhost:8080/quiz/getallQuiz',{
       headers: {
         'Authorization': `Bearer ${token}`
       }

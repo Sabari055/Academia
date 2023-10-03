@@ -1,4 +1,4 @@
-/* CSS for Home Section */
+
 .homeCont {
     width: 100%;
 }
@@ -158,7 +158,7 @@
 .home-event-main {
     /* width: 100%; */
     padding: 40px 0px 0px 30px;
-    background-color: #fff; /* Change background color to match course section */
+    background-color: #fff; 
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -191,10 +191,10 @@
 .home-event-card-category {
     font-size: 14px;
     color: rgb(0, 0, 0);
-    padding: 0px 0 10px 0; /* Adjust padding */
+    padding: 0px 0 10px 0; 
 }
 
-/* Media Query for Small Screens (max-width: 768px) */
+
 @media (max-width: 768px) {
     .left {
         text-align: center;

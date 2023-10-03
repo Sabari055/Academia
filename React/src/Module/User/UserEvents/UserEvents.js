@@ -15,7 +15,7 @@ export default function UserEvents() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/getQuiz/${eventId}`, {
+      .get(`http://localhost:8080/quiz/getQuiz/${eventId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -60,7 +60,7 @@ export default function UserEvents() {
       }));
 
       axios
-        .post(`http://localhost:8080/submit/${eventId}`, responses, {
+        .post(`http://localhost:8080/quiz/submit/${eventId}`, responses, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

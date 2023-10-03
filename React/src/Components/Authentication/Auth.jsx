@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Import Axios
+import axios from 'axios'; 
 import './Auth.css';
 import { MdAccountBox } from 'react-icons/md';
 import { BiLogoGmail } from 'react-icons/bi';
@@ -32,7 +32,7 @@ function Auth() {
     }
 
     axios.post('http://localhost:8080/users/new',formData).then((response)=>{
-      alert(response.data)
+      alert("User Registered Successfully")
       setAction('Login')
     })
   };
@@ -50,9 +50,6 @@ function Auth() {
     password: formData.password})
     .then((response)=>{
 
-      // alert(response.data)
-      // console.log(response.data)
-
       if(response.data.token!==null)
       {
         let listvar = response.data.token.role[0].authority;
@@ -61,9 +58,10 @@ function Auth() {
 
         if (listvar === 'ROLE_USER' ) {
           navigate('/home');
+          alert("User Login Successfull")
         } else if(listvar === 'ROLE_ADMIN') {
-          // navigate('/InstructorDashboard');
-          alert('admin')
+          navigate('/trainer-course');
+          alert("Admin Login Successfull")
         }
       }
       else {

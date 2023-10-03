@@ -18,7 +18,7 @@
     background-color: rgb(255, 255, 255);
     padding-bottom: 30px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Add shadow */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); 
 }
 .authHeader{
     display: flex;
@@ -110,7 +110,7 @@
     max-height: 30%;
 }
 
-/* Hide .png-image when screen width is below a certain threshold */
+
 @media (max-width: 868px) {
     .png-image {
         display: none;
