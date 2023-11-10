@@ -29,7 +29,7 @@ export default function ViewQuizQuestions() {
 
   return (
     <div>
-         <div className='admin-eventSubTitle'>{quizData[0].category}</div>
+         {/* <div className='admin-eventSubTitle'>{quizData[0].category}</div> */}
       {quizData.map((qz, index) => (
         <div className='admin-eventSub' key={qz.id}>
           <div className='admin-event-ques'>
